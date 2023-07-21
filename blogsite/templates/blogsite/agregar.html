@@ -1,0 +1,14 @@
+<h1>Agregar Post</h1>
+<form action="/post/agregar/" method="post">
+{% csrf_token %}
+Titulo:<br>
+<input name="title">
+<br><br>
+Contenido:<br>
+<input name="content">
+<br><br>
+Autor:<br>
+<input name="author">
+<br><br>
+<input type="submit" value="Submit">
+</form>

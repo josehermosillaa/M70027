@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+<body>
+<h1>Posts</h1>
+<table border="1">
+<tr>
+<td>id</td>
+<td>title</td>
+<td>slug</td>
+<td>content</td>
+<td>created_on</td>
+<td>author</td>
+</tr>
+{% for post in posts %}
+<tr>
+<td>{{ post.id }}</td>
+<td>{{ post.title }}</td>
+<td>{{ post.slug }}</td>
+<td>{{ post.content }}</td>
+<td>{{ post.created_on }}</td>
+<td>{{ post.author }}</td>
+<td><a href="/post/actualizar/{{ post.id }}">actualizar</a></td>
+<td><a href="/post/eliminar/{{ post.id }}">eliminar</a></td>
+</tr>
+{% endfor %}
+</table>
+<p>
+    <a href="/post/agregar/">Agregar Post</a>
+</p>
+</body>
+</html>

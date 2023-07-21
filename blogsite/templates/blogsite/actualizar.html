@@ -1,0 +1,14 @@
+<h1>Actualizar Post</h1>
+<form action="/post/actualizar/{{ post.id }}/" method="post">
+{% csrf_token %}
+Titulo:<br>
+<input name="title" value="{{ post.title}}">
+<br><br>
+Contenido:<br>
+<input name="content" value="{{ post.content}}">
+<br><br>
+Autor:<br>
+<input name="author" value="{{ post.author}}">
+<br><br>
+<input type="submit" value="Submit">
+</form>
