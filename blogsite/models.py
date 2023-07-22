@@ -6,7 +6,7 @@ from django.urls import reverse
 
 class Post(models.Model):
     # pk = models.AutoField(primary_key=True) -> 1, 2, 3, 4
-    title = models.CharField(max_length=254, verbose_name="Titulo")
+    title = models.CharField(max_length=254,verbose_name="Titulo")
     slug = models.SlugField(unique=True,blank=True, null=True,max_length=255)
     content = models.TextField(verbose_name="Contenido")
     author = models.TextField(verbose_name="autor")

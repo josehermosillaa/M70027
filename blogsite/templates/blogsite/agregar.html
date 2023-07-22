@@ -2,7 +2,7 @@
 <form action="/post/agregar/" method="post">
 {% csrf_token %}
 Titulo:<br>
-<input name="title">
+<input name="title" required="required">
 <br><br>
 Contenido:<br>
 <input name="content">

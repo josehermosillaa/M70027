@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponseRedirect
 from .models import Post
 from django.template.defaultfilters import slugify
+from .forms import PostForm
 
 # Create your views here.
 
@@ -21,7 +22,9 @@ def agregar(request):
             )
         return HttpResponseRedirect("/post/")
     elif request.method == "GET":
-        return render(request,"blogsite/agregar.html")
+        form = PostForm()
+        context = {"form":form}
+        return render(request,"blogsite/agregar.html", context)
 
 def eliminar(request, id):
     post = Post.objects.get(id=id)
@@ -29,7 +32,7 @@ def eliminar(request, id):
     return HttpResponseRedirect("/post/")
 
 def actualizar(request, id):
-    
+    print(f"{request.POST}")
     if request.method == "POST":
         Post.objects.filter(id=id).update(
             title=request.POST["title"],
