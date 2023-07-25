@@ -14,6 +14,19 @@ class Marca(models.Model):
     def __str__(self):
         return self.nombre
 
+class DirectorEjecutivo(models.Model):
+    nombre = models.CharField(max_length=255,blank=True, verbose_name="Director Ejecutivo")
+    marca = models.OneToOneField(Marca, verbose_name="Marca", on_delete=models.CASCADE)
+    created = models.DateField(auto_now_add=True, verbose_name="Fecha de Creación")
+    updated = models.DateField(auto_now=True, verbose_name="Fecha de Actualización")
+    class Meta:
+        verbose_name = "director ejecutivo"
+        verbose_name_plural = "directores ejecutivos"
+        ordering = ["-created"]
+    
+    def __str__(self):
+        return self.nombre
+
 class TipoCombustible(models.Model):
     nombre = models.CharField(max_length=255, verbose_name="Combustible")
     created = models.DateField(auto_now_add=True, verbose_name="Fecha de Creación")
