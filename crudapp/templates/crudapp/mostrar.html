@@ -1,0 +1,41 @@
+{% extends 'crudapp/base.html' %}
+
+{% block content %}
+<h2 style="text-align:center"> Información de Empleados </h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id de Empleado</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Designación</th>
+        <th>Editar</th>
+        <th>Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for empleado in empleados %}
+        <tr>
+        <td>{{empleado.emp_id}}</td>
+        <td>{{empleado.emp_nombre}}</td>
+        <td>{{empleado.emp_correo}}</td>
+        <td>{{empleado.emp_designacion}}</td>
+        <td>
+        <a href="/crudapp/editar/{{empleado.pk}}/">Actualizar</a>
+        </td>
+        <td>
+        <a href="/crudapp/eliminar/{{empleado.pk}}/">Eliminar</a>
+        </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  <br><br>
+    <div class="alert alert-danger" role="alert">
+    ¿Quieres ingresar más empleadas?
+    </div>
+    <p>
+        <a href="{% url 'insertar-emp' %}"><-- Agregar empleados</a>
+    </p>
+
+{% endblock content %}

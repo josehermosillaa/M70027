@@ -1,0 +1,21 @@
+{% extends 'crudapp/base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="row">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="Actualizar">
+        <br><br>
+    <div class="alert alert-danger" role="alert">
+    ¿Quiere ver Información de Empleados?
+    </div>
+    <p>
+        <a href="{% url 'mostrar-emp' %}">Volver a la pagina principal--></a>
+    </p>
+    </form>
+    
+</div>
+
+{% endblock content %}

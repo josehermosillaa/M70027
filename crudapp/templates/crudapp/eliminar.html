@@ -1,0 +1,18 @@
+{% extends 'crudapp/base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+    Estas seguro que deseas eliminar al "{{empleado.emp_nombre}}"?
+    </div>
+    <p>
+    <a href="{% url 'mostrar-emp' %}"><-- Retornar</a>
+    </p>
+    <p>
+    <input class="btn btn-danger" type="submit" value="Confirmar">
+    </p>
+    </form>
+
+{% endblock content %}
