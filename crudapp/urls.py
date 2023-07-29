@@ -5,4 +5,5 @@ urlpatterns = [
     path("mostrar/",views.mostrar_emp,name ="mostrar-emp"),
     path("eliminar/<int:pk>/",views.eliminar_emp,name ="eliminar-emp"),
     path("editar/<int:pk>/",views.editar_emp,name ="editar-emp"),
+    path("empleado/<int:pk>/",views.empleado_detalle,name ="empleado-detalle"),
 ]

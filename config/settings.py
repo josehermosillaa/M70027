@@ -61,6 +61,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "config.urls"
+#este parametro define cual es el cerbero, adminitrador de las urls del sistema
 
 TEMPLATES = [
     {

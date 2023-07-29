@@ -1,0 +1,22 @@
+{% extends 'crudapp/base.html' %}
+
+{% block content %}
+<div class="row">
+    <p>
+        <h2> {{empleado.emp_nombre}}</h2>
+        <ul>
+            <li><strong>ID :</strong>{{empleado.emp_id}}</li>
+            <li><strong>Designacion :</strong>{{empleado.emp_designacion}}</li>
+            <li><strong>Correo :</strong>{{empleado.emp_correo}}</li>
+        </ul>
+    </p>
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+    ¿Quieres ingresar más empleadas?
+    </div>
+    <p>
+    <a href="{% url 'mostrar-emp' %}"><-- Ir a la pagina de Inicio</a>
+    </p>
+</div>
+
+{% endblock content %}

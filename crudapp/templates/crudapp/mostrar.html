@@ -16,12 +16,13 @@
     <tbody>
         {% for empleado in empleados %}
         <tr>
-        <td>{{empleado.emp_id}}</td>
+        {% comment %} <td><a href="/crudapp/empleado/{{empleado.pk}}/">{{empleado.emp_id}}</a></td> {% endcomment %}
+        <td><a href="{% url 'empleado-detalle' empleado.pk %}">{{empleado.emp_id}}</a></td>
         <td>{{empleado.emp_nombre}}</td>
         <td>{{empleado.emp_correo}}</td>
         <td>{{empleado.emp_designacion}}</td>
         <td>
-        <a href="/crudapp/editar/{{empleado.pk}}/">Actualizar</a>
+        <a href="{% url 'editar-emp' empleado.pk %}">Actualizar</a>
         </td>
         <td>
         <a href="/crudapp/eliminar/{{empleado.pk}}/">Eliminar</a>
