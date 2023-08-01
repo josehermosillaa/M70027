@@ -1,0 +1,19 @@
+{% extends 'usuario/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-6">
+    <h1>Login</h1>
+    {% load crispy_forms_tags %}
+    <form method="POST">
+    {% csrf_token %} {{ login_form|crispy }}
+    <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <p class="text-center">
+    Si no tienes actualemnte una cuenta, Registrese aqui
+    <a href="{% url 'registro' %}">registro</a>
+    </p>
+    </div>
+</div>
+
+{% endblock content %}

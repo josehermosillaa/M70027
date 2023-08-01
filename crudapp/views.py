@@ -18,8 +18,14 @@ def insertar_emp(request):
 #obtener empleados
 def mostrar_emp(request):
     empleados = Empleado.objects.all()
-    context = {"empleados":empleados}
+    num_visits = request.session.get('num_visits',1)
+    request.session["num_visits"]= num_visits + 1
+    context = {
+        "empleados":empleados,
+        "num_visits":num_visits,
+        }
     return render(request, "crudapp/mostrar.html",context )
+
 #editar empleados
 def editar_emp(request, pk):
     if request.method == "POST":
