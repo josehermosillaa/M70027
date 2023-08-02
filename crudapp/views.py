@@ -59,4 +59,10 @@ def empleado_detalle(request, pk):
         'empleado':empleado,
     }
     return render(request, 'crudapp/detalle.html', context)
+
+def inicio_view(request):
+    return render(request, "crudapp/inicio.html")
+
+def acerca_de_view(request):
+    return render(request, "crudapp/acerca-de.html")
     
